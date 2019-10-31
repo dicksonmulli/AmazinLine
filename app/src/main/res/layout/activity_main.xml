@@ -1,81 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_start"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.06"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_end"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.94"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".MainActivity">
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.06"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.94"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TextView
+            android:id="@+id/questionOneTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/question_one"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
+        <CheckBox
+            android:id="@+id/casualCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/casual_comfortable_simple"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/questionOneTextView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <CheckBox
+            android:id="@+id/professionalCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/professional_refined_sophisticated"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/casualCheckBox" />
+
+        <CheckBox
+            android:id="@+id/eclecticCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/eclectic_unconventional_unique"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/professionalCheckBox" />
+
+        <CheckBox
+            android:id="@+id/boldCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/bold_striking_attention_grabbing"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/eclecticCheckBox" />
+
+        <CheckBox
+            android:id="@+id/gentleCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/gentle_soft_sensitive"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/boldCheckBox" />
+
+        <TextView
+            android:id="@+id/questionTwoTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/question_two"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/gentleCheckBox" />
+
+        <TextView
+            android:id="@+id/shirtTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/shirt_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/questionTwoTextView" />
+
+        <TextView
+            android:id="@+id/neckSizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="neck size"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/shirtTextView" />
+
+        <EditText
+            android:id="@+id/neckSizeEditText"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/neckSizeTextView"
+            app:layout_constraintTop_toBottomOf="@id/shirtTextView" />
+
+        <Spinner
+            android:id="@+id/shirtSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/neckSizeEditText" />
+
+        <TextView
+            android:id="@+id/pantTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/pant_size"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/shirtSpinner" />
+
+        <TextView
+            android:id="@+id/waistSizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/waist_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/pantTextView" />
+
+        <EditText
+            android:id="@+id/waistSizeEditText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/waist_size"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@+id/waistSizeTextView"
+            app:layout_constraintTop_toBottomOf="@id/pantTextView" />
+
+        <Spinner
+            android:id="@+id/pantSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/waistSizeEditText" />
+
+        <TextView
+            android:id="@+id/shoeSizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_size"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/pantSpinner" />
+
+        <Spinner
+            android:id="@+id/shoeSpinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSizeTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">AmazinLine</string>
+    <string name="gentle_soft_sensitive">Gentle, Soft, Sensitive</string>
+    <string name="bold_striking_attention_grabbing">Bold, Striking, Attention Grabbing</string>
+    <string name="eclectic_unconventional_unique">Eclectic, Unconventional, Unique</string>
+    <string name="professional_refined_sophisticated">Professional, Refined, Sophisticated</string>
+    <string name="casual_comfortable_simple">Casual, Comfortable, Simple</string>
+    <string name="title">Please pick your personal preferences</string>
+    <string name="question_one">Question 1. Which of these keywords do you identify with the most:</string>
+    <string name="question_two">Question 2. Which description/s do you relate to the most?</string>
+    <string name="shirt_size">Shirt size</string>
+    <string name="pant_size">Pant size</string>
+    <string name="waist_size">Waist size</string>
+    <string name="shoe_size">Shoe size</string>
+    <string name="welcome">Welcome to Amazin Clothes</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="welcome_back">Welcome back to Amazin Clothes</string>
+    <string name="login">LogIn</string>
+    <string name="switch_to_sign_up">Don\'t have an account? Click here to signUp</string>
+    <string name="signup">SignUp</string>
+    <string name="switch_to_login">Have an account? Click here to login</string>
+    <string name="sign_in">SignIn</string>
+
+    <string-array name="sizes">
+        <item>"S"</item>
+        <item>M</item>
+        <item>L</item>
+        <item>XL</item>
+        <item>XXL</item>
+    </string-array>
 </resources>
