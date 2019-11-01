@@ -1,4 +1,4 @@
-package com.amazinline
+package com.amazinline.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.amazinline.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_sign_in.*
@@ -100,18 +101,37 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
      * Signin or sign up
      */
     private fun attemptLoginIn() {
-        if (emailEditText.text.isNotEmpty() && passwordEditText.text.isNotEmpty()) {
-            mUserName = emailEditText.text.toString()
-            mPassword = passwordEditText.text.toString()
+        email_til.isErrorEnabled = false
+        password_til.isErrorEnabled = false
+        email_til.error = null
+        password_til.error = null
 
+        passwordEditText.text?.let {
+            if (it.isNotEmpty()) {
+                mPassword = passwordEditText.text.toString()
+            } else {
+                password_til.error = "Password cannot be empty!"
+                //Toast.makeText(this, "Username or password cannot be empty!", Toast.LENGTH_SHORT).show()
+            }
+        }
+        emailEditText.text?.let {
+            if (it.isNotEmpty()) {
+                mUserName = emailEditText.text.toString()
+
+            } else {
+                email_til.error = "Email cannot be empty!"
+                //Toast.makeText(this, "Username or password cannot be empty!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        if (email_til.error.isNullOrEmpty() && password_til.error.isNullOrEmpty()) {
             progressBar.visibility = View.VISIBLE
+
             if (mOnLogin) {
                 firebaseAuthWithEmail()
             } else {
                 firebaseSignUpWithEmail()
             }
-        } else {
-            Toast.makeText(this, "Username or password cannot be empty!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -130,7 +150,6 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
                 } else {
 
                     // If sign in fails, display a message to the user.
-                    Log.e(TAG, "signUpWithCredential:failure", task.exception)
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                     updateUI(null, false)
                 }

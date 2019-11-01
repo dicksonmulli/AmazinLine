@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    android:background="@color/windowBackground"
+    tools:context=".activities.SignInActivity">
 
     <TextView
         android:id="@+id/welcomeTitle"
@@ -38,37 +39,57 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeTitle" />
 
-    <EditText
-        android:id="@+id/emailEditText"
+    <com.amazinline.customview.CustomTextInputLayout
+        android:id="@+id/email_til"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/standard_element_spacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logInTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/logInTextView"
+        app:errorTextAppearance="@style/ErrorText"
+        app:hintEnabled="false">
 
-    <EditText
-        android:id="@+id/passwordEditText"
-        android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:hint="@string/email"
+            android:textColorHint="@android:color/darker_gray" />
+
+    </com.amazinline.customview.CustomTextInputLayout>
+
+    <com.amazinline.customview.CustomTextInputLayout
+        android:id="@+id/password_til"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/standard_element_spacing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/email_til"
+        app:errorTextAppearance="@style/ErrorText"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:hint="@string/password"
+            android:textColorHint="@android:color/darker_gray" />
+
+    </com.amazinline.customview.CustomTextInputLayout>
 
     <TextView
         android:id="@+id/switchLoginTextView"
@@ -85,7 +106,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/password_til" />
 
     <Button
         android:id="@+id/signInButton"

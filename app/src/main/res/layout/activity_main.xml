@@ -2,13 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/windowBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MainActivity">
+        tools:context=".activities.MainActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_start"
@@ -28,11 +29,12 @@
 
         <TextView
             android:id="@+id/titleTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:text="@string/title"
             android:textStyle="bold"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,76 +43,142 @@
             android:id="@+id/questionOneTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:text="@string/question_one"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
-        <CheckBox
-            android:id="@+id/casualCheckBox"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/keywordsCardView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/casual_comfortable_simple"
+            android:background="@android:color/white"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="@dimen/standard_element_spacing"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/questionOneTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/questionOneTextView">
 
-        <CheckBox
-            android:id="@+id/professionalCheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/professional_refined_sophisticated"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/casualCheckBox" />
+        <RadioGroup
+            android:id="@+id/keywordsRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/standard_element_spacing">
 
-        <CheckBox
-            android:id="@+id/eclecticCheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/eclectic_unconventional_unique"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/professionalCheckBox" />
+            <RadioButton
+                android:id="@+id/casualCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:buttonTint="@color/colorAccentDark"
+                android:text="@string/casual_comfortable_simple" />
 
-        <CheckBox
-            android:id="@+id/boldCheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/bold_striking_attention_grabbing"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/eclecticCheckBox" />
+            <RadioButton
+                android:id="@+id/professionalCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:buttonTint="@color/colorAccentDark"
+                android:text="@string/professional_refined_sophisticated" />
 
-        <CheckBox
-            android:id="@+id/gentleCheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/gentle_soft_sensitive"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/boldCheckBox" />
+            <RadioButton
+                android:id="@+id/eclecticCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:buttonTint="@color/colorAccentDark"
+                android:text="@string/eclectic_unconventional_unique" />
+
+            <RadioButton
+                android:id="@+id/boldCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:buttonTint="@color/colorAccentDark"
+                android:text="@string/bold_striking_attention_grabbing" />
+
+            <RadioButton
+                android:id="@+id/gentleCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:buttonTint="@color/colorAccentDark"
+                android:text="@string/gentle_soft_sensitive" />
+
+        </RadioGroup>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/questionTwoTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:text="@string/question_two"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/gentleCheckBox" />
+            app:layout_constraintTop_toBottomOf="@+id/keywordsCardView" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/descriptionCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="@dimen/standard_element_spacing"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/questionTwoTextView">
+
+        <RadioGroup
+            android:id="@+id/descriptionRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/standard_element_spacing">
+
+            <RadioButton
+                android:id="@+id/casualRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I like to be casual and down to earth, I love comfort and easy to care for clothes."
+                android:buttonTint="@color/colorAccentDark"/>
+
+            <RadioButton
+                android:id="@+id/organizedRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am organised and practical and prefer to fill my wardrobe with versatile investment pieces."
+                android:buttonTint="@color/colorAccentDark"/>
+
+            <RadioButton
+                android:id="@+id/originalityRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am spirited and self expressed and originality is key."
+                android:buttonTint="@color/colorAccentDark"/>
+
+            <RadioButton
+                android:id="@+id/boldRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am bold and like to stand out in a crowd and wear striking clothes that make a statement."
+                android:buttonTint="@color/colorAccentDark"/>
+
+            <RadioButton
+                android:id="@+id/sensitiveRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I am sensitive, gentle and supportive and love feminine details such as lace, gathers and frills."
+                android:buttonTint="@color/colorAccentDark"/>
+
+        </RadioGroup>
+
+    </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/shirtTextView"
@@ -118,84 +186,204 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/shirt_size"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/questionTwoTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/descriptionCardView" />
 
         <TextView
             android:id="@+id/neckSizeTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="neck size"
+            android:layout_marginTop="5dp"
+            android:text="@string/neck_size"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/neckSizeEditText"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/shirtTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/shirtTextView" />
 
         <EditText
             android:id="@+id/neckSizeEditText"
-            android:layout_width="50dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@+id/neckSizeTextView"
-            app:layout_constraintTop_toBottomOf="@id/shirtTextView" />
+            android:hint="20"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/neckSizeTextView" />
+
+        <TextView
+            android:id="@+id/armSizeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/arm_size"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/armSizeEditText"
+            app:layout_constraintStart_toStartOf="@+id/armSizeEditText"
+            app:layout_constraintTop_toBottomOf="@+id/shirtTextView" />
+
+        <EditText
+            android:id="@+id/armSizeEditText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="150"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintStart_toEndOf="@+id/neckSizeEditText"
+            app:layout_constraintTop_toTopOf="@+id/neckSizeEditText"
+            app:layout_constraintBottom_toBottomOf="@+id/neckSizeEditText" />
+
+        <TextView
+            android:id="@+id/shirtSizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_your_size"
+            android:layout_marginTop="@dimen/standard_element_spacing"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/neckSizeEditText"/>
 
         <Spinner
             android:id="@+id/shirtSpinner"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/neckSizeEditText" />
+            android:dropDownSelector="@drawable/edittext_background"
+            android:layout_marginStart="@dimen/standard_element_spacing"
+            app:layout_constraintStart_toEndOf="@+id/shirtSizeTextView"
+            app:layout_constraintTop_toTopOf="@+id/shirtSizeTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/shirtSizeTextView" />
 
         <TextView
             android:id="@+id/pantTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="22dp"
+            android:textSize="16sp"
             android:text="@string/pant_size"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/shirtSpinner" />
 
         <TextView
             android:id="@+id/waistSizeTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:text="@string/waist_size"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/waistSizeEditText"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/pantTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/pantTextView" />
 
         <EditText
             android:id="@+id/waistSizeEditText"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:hint="@string/waist_size"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            app:layout_constraintStart_toEndOf="@+id/waistSizeTextView"
-            app:layout_constraintTop_toBottomOf="@id/pantTextView" />
+            android:hint="20"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/waistSizeTextView" />
+
+        <TextView
+            android:id="@+id/inseamTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/inseam"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/inseamEditText"
+            app:layout_constraintStart_toStartOf="@+id/inseamEditText"
+            app:layout_constraintTop_toBottomOf="@+id/pantTextView" />
+
+        <EditText
+            android:id="@+id/inseamEditText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="150"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/edittext_background"
+            app:layout_constraintStart_toEndOf="@+id/waistSizeEditText"
+            app:layout_constraintTop_toTopOf="@+id/waistSizeEditText"
+            app:layout_constraintBottom_toBottomOf="@+id/waistSizeEditText" />
+
+        <TextView
+            android:id="@+id/pantSizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_your_size"
+            android:layout_marginTop="@dimen/standard_element_spacing"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/waistSizeEditText"/>
 
         <Spinner
             android:id="@+id/pantSpinner"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            android:layout_marginStart="@dimen/standard_element_spacing"
+            app:layout_constraintStart_toEndOf="@+id/pantSizeTextView"
+            app:layout_constraintTop_toTopOf="@+id/pantSizeTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/pantSizeTextView" />
+
+        <TextView
+            android:id="@+id/shoeSizeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shoe_size"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="22dp"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/waistSizeEditText" />
+            app:layout_constraintTop_toBottomOf="@id/pantSpinner" />
 
         <TextView
             android:id="@+id/shoeSizeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shoe_size"
+            android:text="@string/select_your_size"
+            android:textColor="@android:color/black"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@id/pantSpinner" />
+            app:layout_constraintTop_toBottomOf="@id/shoeSizeTitle" />
 
         <Spinner
             android:id="@+id/shoeSpinner"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/standard_element_spacing"
+            app:layout_constraintStart_toEndOf="@+id/shoeSizeTextView"
+            app:layout_constraintTop_toTopOf="@+id/shoeSizeTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/shoeSizeTextView"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="@dimen/standard_element_spacing"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/standard_element_spacing"
+            android:layout_weight="1"
+            android:background="@drawable/button_orange"
+            android:paddingLeft="@dimen/standard_spacing"
+            android:paddingRight="@dimen/standard_spacing"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/shoeSpinner"
             app:layout_constraintEnd_toStartOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
-            app:layout_constraintTop_toBottomOf="@+id/shoeSizeTextView" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="?android:attr/borderlessButtonStyle" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
