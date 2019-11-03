@@ -42,5 +42,6 @@
         <item>9</item>
     </string-array>
     <string name="title_activity_results">ResultsActivity</string>
+    <string name="progress_loader_wait_a_moment">Wait a moment..</string>
 
 </resources>

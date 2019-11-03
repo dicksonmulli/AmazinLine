@@ -125,7 +125,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         if (email_til.error.isNullOrEmpty() && password_til.error.isNullOrEmpty()) {
-            progressBar.visibility = View.VISIBLE
+            progressBar.show()
 
             if (mOnLogin) {
                 firebaseAuthWithEmail()
@@ -173,6 +173,6 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun hideProgressDialog() {
-        progressBar.visibility = View.INVISIBLE
+        progressBar.hide()
     }
 }
