@@ -120,6 +120,7 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
             } else {
                 email_til.error = "Email cannot be empty!"
+                throw IllegalArgumentException("Email cannot be empty, you must be joking!")
                 //Toast.makeText(this, "Username or password cannot be empty!", Toast.LENGTH_SHORT).show()
             }
         }

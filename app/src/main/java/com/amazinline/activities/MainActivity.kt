@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Ra
     private var shirtAdapter: ArrayAdapter<*>? = null
     private var pantAdapter: ArrayAdapter<*>? = null
     private var shoeAdapter: ArrayAdapter<*>? = null
+    private var depositAdapter: ArrayAdapter<*>? = null
 
     private var mIdentityKeyword: String = ""
     private var mDescription: String = ""
@@ -102,6 +103,18 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener, Ra
             // Apply the adapter to the spinner
             shoeSpinner.adapter = adapter
             shoeSpinner.onItemSelectedListener = this
+        }
+
+        depositAdapter = createFromResource(
+            this,
+            R.array.shoe_size,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinnerDepositFrom.adapter = adapter
+            spinnerDepositFrom.onItemSelectedListener = this
         }
     }
 
