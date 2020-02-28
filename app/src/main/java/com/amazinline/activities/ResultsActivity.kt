@@ -44,7 +44,7 @@ class ResultsActivity : AppCompatActivity() {
 
         }) }
 
-        fab.setOnClickListener { view ->
+        fab.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
     }

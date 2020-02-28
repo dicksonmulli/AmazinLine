@@ -17,11 +17,7 @@ class LocalDataSource private constructor(private val appExecutors: AppExecutors
 
             // Run on the main thread
             appExecutors.mainThread.execute {
-                if (customer != null) {
-                    callback.onCustomerLoaded(customer)
-                } else {
-                    callback.onDataNotAvailable()
-                }
+                callback.onCustomerLoaded(customer)
             }
         }
     }
@@ -45,11 +41,7 @@ class LocalDataSource private constructor(private val appExecutors: AppExecutors
 
             // Run on the main thread
             appExecutors.mainThread.execute {
-                if (customer != null) {
-                    callback.onCustomerLoaded(customer)
-                } else {
-                    callback.onDataNotAvailable()
-                }
+                callback.onCustomerLoaded(customer)
             }
         }
     }

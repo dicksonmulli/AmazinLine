@@ -11,6 +11,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
+/**
+ * SingIn Activity
+ */
 class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
